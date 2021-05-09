@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "Data";
+
+package usageDatas;
+
+// The greeting service definition.
+service UsageDataServices {
+  // Sends a greeting
+  rpc GetAllUsageData (Empty) returns (UsageDataList);
+}
+
+message Empty {}
+
+// The request message containing the user's name.
+message UsageData {
+    string time = 1;
+    float meterusage = 2;
+}
+
+message UsageDataList {
+    repeated UsageData usageDatas = 1;
+}
